@@ -727,21 +727,28 @@
     note.style.color = 'var(--espresso)';
 
     const payload = {
+      access_key: 'd584af6b-b1af-4629-8a1d-541e0cc6064e',
       name: document.getElementById('name').value,
       company: document.getElementById('company').value,
       email: document.getElementById('email').value,
       website_or_channel: document.getElementById('channel').value,
       goal: document.getElementById('goal').value,
-      _subject: 'New enquiry from ' + document.getElementById('company').value
+      subject: 'New enquiry from ' + document.getElementById('company').value
     };
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
     try{
-      const res = await fetch('https://formsubmit.co/ajax/boostbite.marketing@gmail.com', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: controller.signal
       });
-      if(res.ok){
+      clearTimeout(timeoutId);
+      const result = await res.json();
+      if(res.ok && result.success){
         note.textContent = "Thanks — we'll get back to you within one business day.";
         note.style.color = 'var(--sienna)';
         form.reset();
@@ -749,6 +756,7 @@
         throw new Error('Request failed');
       }
     } catch(err){
+      clearTimeout(timeoutId);
       note.textContent = "Something went wrong — please email us directly at boostbite.marketing@gmail.com.";
       note.style.color = 'var(--sienna)';
     }
