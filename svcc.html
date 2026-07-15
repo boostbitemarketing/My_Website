@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shri Vaishnav Commerce College — Boostbite Marketing Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --espresso:#2B1D14;
+    --beige:#EFE4CE;
+    --cream:#F8F2E6;
+    --camel:#C9A876;
+    --sienna:#B85C38;
+    --ink:#241A12;
+    --paper:#F5EFE1;
+    --line: rgba(43,29,20,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--sienna);color:var(--cream);}
+  .wrap{max-width:900px;margin:0 auto;padding:0 32px;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--sienna); outline-offset:3px;}
+
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(245,239,225,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    max-width:1180px;
+    display:flex; align-items:center; justify-content:space-between;
+    height:78px;
+  }
+  .logo{
+    font-family:'Fraunces', serif; font-weight:600; font-size:22px;
+    letter-spacing:-0.01em; display:flex; align-items:center; gap:8px;
+  }
+  .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--sienna);display:inline-block;}
+  .back-link{font-size:14px; font-weight:600; opacity:0.75; display:flex; align-items:center; gap:8px; transition:opacity .2s;}
+  .back-link:hover{opacity:1;}
+  .back-link svg{width:14px;height:14px;}
+
+  .case-hero{padding:160px 0 70px; border-bottom:1px solid var(--line);}
+  .kicker-tag{
+    font-family:'Space Mono', monospace; font-size:12.5px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--sienna); display:flex; align-items:center; gap:10px;
+    margin-bottom:20px;
+  }
+  .kicker-tag::before{content:'';width:22px;height:1px;background:var(--sienna);}
+  h1.case-title{
+    font-family:'Fraunces', serif; font-weight:600; font-size:clamp(34px,5vw,54px);
+    line-height:1.05; letter-spacing:-0.02em; margin-bottom:20px;
+  }
+  .case-sub{font-size:17px; line-height:1.6; opacity:0.72; max-width:560px;}
+
+  .highlight-row{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:18px; overflow:hidden;
+    margin:50px 0;
+  }
+  .highlight-card{background:var(--espresso); padding:32px 26px;}
+  .highlight-card .num{
+    font-family:'Fraunces', serif; font-weight:700; font-size:32px; color:var(--cream); margin-bottom:6px;
+  }
+  .highlight-card .lbl{font-size:13px; color:var(--beige); opacity:0.7;}
+
+  section.case-body{padding:20px 0 90px;}
+  .case-body h2{
+    font-family:'Fraunces', serif; font-weight:600; font-size:26px; margin-bottom:16px; letter-spacing:-0.01em;
+  }
+  .case-body p{font-size:16px; line-height:1.7; opacity:0.78; margin-bottom:28px; max-width:640px;}
+
+  .quote-block{
+    background:var(--beige); border-radius:18px; padding:36px 34px; margin:40px 0;
+    border-left:4px solid var(--sienna);
+  }
+  .quote-block p{
+    font-family:'Fraunces', serif; font-style:italic; font-weight:500; font-size:19px;
+    line-height:1.55; opacity:1; margin-bottom:14px; color:var(--ink);
+  }
+  .quote-block .who{font-size:13.5px; font-weight:600; opacity:0.7;}
+
+  .case-cta{
+    background:var(--espresso); border-radius:22px; padding:44px 38px;
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px;
+    margin-top:20px;
+  }
+  .case-cta h3{font-family:'Fraunces', serif; font-weight:600; font-size:22px; color:var(--cream);}
+  .btn-primary{
+    background:var(--sienna); color:var(--cream);
+    padding:15px 28px; border-radius:100px; font-weight:600; font-size:14.5px;
+    display:inline-flex; align-items:center; gap:10px; border:none; cursor:pointer;
+    transition:background .25s, transform .2s;
+  }
+  .btn-primary:hover{background:var(--camel); color:var(--espresso); transform:translateY(-2px);}
+
+  footer{padding:40px 0; border-top:1px solid var(--line);}
+  footer .wrap{max-width:1180px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .foot-copy{font-size:13px; opacity:0.5;}
+
+  @media (max-width:700px){ .highlight-row{grid-template-columns:1fr;} }
+
+  /* MODAL (shared with homepage) */
+  .modal-overlay{
+    display:none; position:fixed; inset:0; z-index:200;
+    background:rgba(36,26,18,0.6); backdrop-filter:blur(4px);
+    align-items:center; justify-content:center; padding:5vh 5vw;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-panel{
+    background:var(--paper); width:100%; max-width:760px; height:88vh;
+    border-radius:28px; padding:48px 44px; overflow-y:auto; position:relative;
+    box-shadow:0 40px 90px -30px rgba(36,26,18,0.5);
+    animation:modalIn .35s cubic-bezier(.2,.8,.2,1);
+  }
+  @keyframes modalIn{from{opacity:0; transform:translateY(24px) scale(0.98);} to{opacity:1; transform:translateY(0) scale(1);}}
+  .modal-title{font-family:'Fraunces', serif; font-weight:600; font-size:clamp(26px,3vw,34px); line-height:1.1; letter-spacing:-0.02em; margin:14px 0 28px;}
+  .modal-close{position:absolute; top:28px; right:28px; width:38px; height:38px; border-radius:50%; background:var(--beige); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s;}
+  .modal-close:hover{background:var(--camel);}
+  .modal-close svg{width:16px; height:16px; stroke:var(--espresso);}
+  .sec-eyebrow{font-family:'Space Mono', monospace; font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--sienna); display:block;}
+  form{display:flex; flex-direction:column; gap:16px; margin-top:10px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  label{font-family:'Space Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:0.6; margin-bottom:7px; display:block;}
+  input, textarea{width:100%; background:var(--cream); border:1.5px solid var(--line); border-radius:10px; padding:13px 15px; font-family:'Archivo', sans-serif; font-size:14.5px; color:var(--ink); transition:border-color .2s;}
+  input:focus, textarea:focus{border-color:var(--sienna);}
+  textarea{resize:vertical; min-height:110px;}
+  .form-submit{background:var(--espresso); color:var(--cream); border:none; padding:16px; border-radius:10px; font-weight:600; font-size:15px; cursor:pointer; transition:background .25s; margin-top:6px;}
+  .form-submit:hover{background:var(--sienna);}
+  .form-note{font-size:13px; opacity:0.85; margin-top:2px; font-weight:700; color:var(--espresso);}
+  @media (max-width:640px){ .modal-panel{padding:36px 24px; border-radius:22px; height:90vh;} .form-row{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo"><span class="dot"></span>Boostbite Marketing</a>
+    <a href="index.html#portfolio" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      All campaigns
+    </a>
+  </nav>
+</header>
+
+<section class="case-hero">
+  <div class="wrap">
+    <span class="kicker-tag">Case Study &middot; Enrollment Campaign</span>
+    <h1 class="case-title">Shri Vaishnav Commerce College</h1>
+    <p class="case-sub">A YouTube ad campaign built to raise awareness and drive enrollment interest, backed by transparent weekly reporting.</p>
+
+    <div class="highlight-row">
+      <div class="highlight-card"><div class="num">55%+</div><div class="lbl">Peak view rate</div></div>
+      <div class="highlight-card"><div class="num">Weekly</div><div class="lbl">Reporting cadence</div></div>
+      <div class="highlight-card"><div class="num">Many</div><div class="lbl">Conversions driven</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="case-body">
+  <div class="wrap">
+    <h2>What we did</h2>
+    <p>For Shri Vaishnav Commerce College, we ran an awareness-to-enrollment campaign, pairing targeted ad creative with a consistent weekly reporting rhythm so the team always knew exactly how the campaign was performing.</p>
+    <p>The campaign held a view rate above 55% throughout, well above typical benchmarks, and converted a strong share of that attention into real interest.</p>
+
+    <div class="quote-block">
+      <p>"Honest weekly reporting and a campaign strategy that got many conversions — the view rate was 55%+. A great partner to work with."</p>
+      <div class="who">Shri Vaishnav Commerce College &middot; Client</div>
+    </div>
+
+    <div class="case-cta">
+      <h3>Want results like this for your business?</h3>
+      <button type="button" class="btn-primary" onclick="openModal()">
+        Start a project
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="dot"></span>Boostbite Marketing</a>
+    <span class="foot-copy">© 2026 Boostbite Marketing. All rights reserved.</span>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this) closeModal()">
+  <div class="modal-panel">
+    <button type="button" class="modal-close" onclick="closeModal()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <span class="sec-eyebrow">Start a project</span>
+    <h2 class="modal-title">Let's turn your viewers into customers.</h2>
+    <form onsubmit="return handleSubmit(event)">
+      <div class="form-row">
+        <div><label for="name">Your name</label><input id="name" name="name" type="text" required placeholder="Jordan Lee"></div>
+        <div><label for="company">Company</label><input id="company" name="company" type="text" required placeholder="Your brand name"></div>
+      </div>
+      <div class="form-row">
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@company.com"></div>
+        <div><label for="channel">Website / YouTube URL</label><input id="channel" name="channel" type="text" placeholder="yourbusiness.com"></div>
+      </div>
+      <div><label for="goal">What's the goal?</label><textarea id="goal" name="goal" placeholder="Tell us about your business and what you'd like your YouTube ads to achieve..."></textarea></div>
+      <button type="submit" class="form-submit">Send inquiry</button>
+      <p class="form-note" id="formNote">Your information stays private.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+  async function handleSubmit(e){
+    e.preventDefault();
+    const form = e.target;
+    const note = document.getElementById('formNote');
+    const submitBtn = form.querySelector('.form-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    note.textContent = 'Sending your enquiry...';
+    note.style.color = 'var(--espresso)';
+
+    const payload = {
+      name: document.getElementById('name').value,
+      company: document.getElementById('company').value,
+      email: document.getElementById('email').value,
+      website_or_channel: document.getElementById('channel').value,
+      goal: document.getElementById('goal').value,
+      _subject: 'New enquiry from ' + document.getElementById('company').value
+    };
+
+    try{
+      const res = await fetch('https://formsubmit.co/ajax/boostbite.marketing@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if(res.ok){
+        note.textContent = "Thanks — we'll get back to you within one business day.";
+        note.style.color = 'var(--sienna)';
+        form.reset();
+      } else {
+        throw new Error('Request failed');
+      }
+    } catch(err){
+      note.textContent = "Something went wrong — please email us directly at boostbite.marketing@gmail.com.";
+      note.style.color = 'var(--sienna)';
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send inquiry';
+    return false;
+  }
+  const modalOverlay = document.getElementById('modalOverlay');
+  function openModal(){ modalOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeModal(){ modalOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
