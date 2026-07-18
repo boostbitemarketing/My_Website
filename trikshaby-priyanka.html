@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trikshaby Priyanka — Boostbite Marketing Case Study</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -45,7 +49,10 @@
     font-family:'Fraunces', serif; font-weight:600; font-size:22px;
     letter-spacing:-0.01em; display:flex; align-items:center; gap:8px;
   }
-  .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--sienna);display:inline-block;}
+  .logo-icon{
+    width:32px; height:32px; border-radius:9px;
+    object-fit:cover; flex-shrink:0;
+  }
   .back-link{font-size:14px; font-weight:600; opacity:0.75; display:flex; align-items:center; gap:8px; transition:opacity .2s;}
   .back-link:hover{opacity:1;}
   .back-link svg{width:14px;height:14px;}
@@ -145,7 +152,7 @@
 
 <header>
   <nav class="wrap">
-    <a href="index.html" class="logo"><span class="dot"></span>Boostbite Marketing</a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Boostbite Marketing logo" class="logo-icon">Boostbite Marketing</a>
     <a href="index.html#portfolio" class="back-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
       All campaigns
@@ -190,7 +197,7 @@
 
 <footer>
   <div class="wrap">
-    <a href="index.html" class="logo"><span class="dot"></span>Boostbite Marketing</a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="Boostbite Marketing logo" class="logo-icon">Boostbite Marketing</a>
     <span class="foot-copy">© 2026 Boostbite Marketing. All rights reserved.</span>
   </div>
 </footer>
