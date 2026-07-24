@@ -267,10 +267,16 @@
       clearTimeout(timeoutId);
       const result = await res.json();
       if(res.ok && result.success){
-        note.textContent = "Thanks — we'll get back to you within one business day.";
-        note.style.color = 'var(--sienna)';
-        form.reset();
-      } else {
+
+    // Google Ads Conversion Tracking
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18079653018/w9agCPLDnNUcEJq5hq1D'
+    });
+
+    note.textContent = "Thanks — we'll get back to you within one business day.";
+    note.style.color = 'var(--sienna)';
+    form.reset();
+} else {
         throw new Error('Request failed');
       }
     } catch(err){
